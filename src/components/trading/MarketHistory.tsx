@@ -57,17 +57,21 @@ export default function MarketHistory() {
           </div>
 
           <Tabs defaultValue="IDR" className="w-full">
-            <TabsList className="bg-transparent gap-4 h-auto p-0 w-full justify-between">
-              {["Favorites", "IDR", "USD", "BNB", "BTC", "ALTS"].map((tab) => (
-                <TabsTrigger
-                  key={tab}
-                  value={tab}
-                  className="bg-transparent px-0 text-[14px] font-bold text-[#959595] data-[state=active]:text-white data-[state=active]:border-b-2 data-[state=active]:border-white rounded-none h-auto pb-1 transition-none"
-                >
-                  {tab}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+            <div className="w-full overflow-x-auto pb-1 scrollbar-hide">
+              <TabsList className="bg-transparent gap-4 h-auto p-0 inline-flex w-max min-w-0 justify-start">
+                {["Favorites", "IDR", "USD", "BNB", "BTC", "ALTS"].map(
+                  (tab) => (
+                    <TabsTrigger
+                      key={tab}
+                      value={tab}
+                      className="bg-transparent px-0 text-[14px] font-bold text-[#959595] flex-shrink-0 data-[state=active]:text-white data-[state=active]:border-b-2 data-[state=active]:border-white rounded-none h-auto pb-1 transition-none"
+                    >
+                      {tab}
+                    </TabsTrigger>
+                  ),
+                )}
+              </TabsList>
+            </div>
           </Tabs>
         </div>
 

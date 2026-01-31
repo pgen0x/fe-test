@@ -19,8 +19,8 @@ export default function TradingPage() {
         {/* Main Columns Container - Responsive Grid/Flex */}
         <div className="flex flex-col xl:flex-row flex-1 min-h-0 px-4 gap-4 mt-4 xl:mt-6 overflow-visible xl:overflow-hidden">
           {/* Middle: Chart and Trade Forms. Main content. Appearing FIRST on mobile */}
-          <div className="flex-1 flex flex-col min-h-0 order-1 xl:order-2 overflow-visible xl:overflow-y-auto custom-scrollbar xl:pr-1 gap-4">
-            <div className="flex-none xl:flex-1 h-[500px] md:h-[600px] xl:h-auto">
+          <div className="w-full xl:flex-1 flex flex-col xl:min-h-0 order-1 xl:order-2 overflow-visible xl:overflow-y-auto custom-scrollbar xl:pr-1 gap-4">
+            <div className="flex-none xl:flex-1 h-[500px] md:h-[600px] xl:h-auto overflow-hidden z-0 rounded-lg">
               <CandleChart />
             </div>
             <TradeForms />

@@ -111,7 +111,7 @@ export default function CandleChart() {
         </div>
       </div>
 
-      <div className="relative flex-1 min-h-[400px] w-full h-full">
+      <div className="relative flex-1 w-full h-full">
         <div
           ref={container}
           className="tradingview-widget-container h-full w-full"

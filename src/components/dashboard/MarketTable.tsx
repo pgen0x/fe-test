@@ -165,39 +165,41 @@ export default function MarketTable() {
     <div className="space-y-6">
       <div className="flex items-center gap-8 border-b border-white/5 pb-2">
         <h2 className="text-[24px] font-bold text-white">Favorit</h2>
-        <Tabs defaultValue="IDR" className="w-auto">
-          <TabsList className="bg-transparent gap-8 text-[16px]">
-            <TabsTrigger
-              value="IDR"
-              className="data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-[#D57C17] rounded-none bg-transparent px-0 text-white/50"
-            >
-              IDR
-            </TabsTrigger>
-            <TabsTrigger
-              value="USD"
-              className="data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-[#D57C17] rounded-none bg-transparent px-0 text-white/50"
-            >
-              USD
-            </TabsTrigger>
-            <TabsTrigger
-              value="BNB"
-              className="data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-[#D57C17] rounded-none bg-transparent px-0 text-white/50"
-            >
-              BNB
-            </TabsTrigger>
-            <TabsTrigger
-              value="BTC"
-              className="data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-[#D57C17] rounded-none bg-transparent px-0 text-white/50"
-            >
-              BTC
-            </TabsTrigger>
-            <TabsTrigger
-              value="ALTS"
-              className="data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-[#D57C17] rounded-none bg-transparent px-0 text-white/50"
-            >
-              ALTS
-            </TabsTrigger>
-          </TabsList>
+        <Tabs defaultValue="IDR" className="w-auto flex-1 overflow-hidden">
+          <div className="w-full overflow-x-auto scrollbar-hide">
+            <TabsList className="bg-transparent gap-8 text-[16px] inline-flex w-max min-w-0">
+              <TabsTrigger
+                value="IDR"
+                className="data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-[#D57C17] rounded-none bg-transparent px-0 text-white/50 flex-shrink-0"
+              >
+                IDR
+              </TabsTrigger>
+              <TabsTrigger
+                value="USD"
+                className="data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-[#D57C17] rounded-none bg-transparent px-0 text-white/50 flex-shrink-0"
+              >
+                USD
+              </TabsTrigger>
+              <TabsTrigger
+                value="BNB"
+                className="data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-[#D57C17] rounded-none bg-transparent px-0 text-white/50 flex-shrink-0"
+              >
+                BNB
+              </TabsTrigger>
+              <TabsTrigger
+                value="BTC"
+                className="data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-[#D57C17] rounded-none bg-transparent px-0 text-white/50 flex-shrink-0"
+              >
+                BTC
+              </TabsTrigger>
+              <TabsTrigger
+                value="ALTS"
+                className="data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-[#D57C17] rounded-none bg-transparent px-0 text-white/50 flex-shrink-0"
+              >
+                ALTS
+              </TabsTrigger>
+            </TabsList>
+          </div>
         </Tabs>
       </div>
 
