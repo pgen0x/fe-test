@@ -54,4 +54,20 @@
                 linear-gradient(to right, #D57C17, #956836) border-box;
     border: 1px solid transparent;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ffffff10;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff20;
+  }
 }
