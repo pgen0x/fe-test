@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
+import { Button } from "@/components/ui/button";
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -27,11 +28,14 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-[#050B15]">
-      <div className="w-full max-w-md p-8 bg-[#0D1421] rounded-2xl shadow-2xl border border-white/5">
+      <div className="w-full max-w-md p-8 bg-[#13213F]/40 rounded-2xl shadow-2xl border border-white/5">
         <div className="flex flex-col items-center mb-10">
-          <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(234,179,8,0.2)]">
-            <div className="w-10 h-10 border-4 border-black border-t-transparent rounded-full animate-spin-slow"></div>
-            <div className="absolute font-bold text-black text-xl">C</div>
+          <div className="flex items-center gap-3 mb-3">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="h-20 w-auto object-contain"
+            />
           </div>
           <h1 className="text-2xl font-bold text-white">Admin Login</h1>
           <p className="text-gray-400 mt-2">
@@ -90,13 +94,14 @@ const LoginPage: React.FC = () => {
             </a>
           </div>
 
-          <button
+          <Button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-bold rounded-xl transition-all shadow-[0_4px_20px_rgba(234,179,8,0.2)] active:scale-[0.98] disabled:opacity-50"
+            variant="ghost"
+            className="rounded-full btn-gradient-border px-8 text-white hover:opacity-80 transition-opacity w-full"
           >
             {isLoading ? "Signing in..." : "Sign In"}
-          </button>
+          </Button>
         </form>
 
         <p className="mt-8 text-center text-gray-500 text-sm">
