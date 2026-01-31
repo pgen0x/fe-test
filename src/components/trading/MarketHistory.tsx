@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 export default function MarketHistory() {
   const [pairs] = useState([
@@ -44,7 +44,7 @@ export default function MarketHistory() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col justify-between gap-6 h-full overflow-hidden text-[14px]">
+    <div className="w-full flex flex-col justify-between gap-2 h-full overflow-hidden text-[14px]">
       {/* Top Section: Pair List */}
       <div className="bg-[#0B1322]/50 rounded-lg flex flex-col min-h-0">
         <div className="p-4 space-y-4">
@@ -64,7 +64,7 @@ export default function MarketHistory() {
                     <TabsTrigger
                       key={tab}
                       value={tab}
-                      className="bg-transparent px-0 text-[14px] font-bold text-[#959595] flex-shrink-0 data-[state=active]:text-white data-[state=active]:border-b-2 data-[state=active]:border-white rounded-none h-auto pb-1 transition-none"
+                      className="bg-transparent px-0 text-[#959595] hover:text-white data-[state=active]:text-white data-[state=active]:border-b-2 data-[state=active]:border-white cursor-pointer transition-colors h-auto rounded-none border-none shadow-none pb-1 transition-none"
                     >
                       {tab}
                     </TabsTrigger>
@@ -103,36 +103,57 @@ export default function MarketHistory() {
 
       {/* Bottom Section: Market Trades */}
       <div className="bg-[#0B1322]/50 rounded-lg flex flex-col min-h-0 mb-4">
-        <div className="p-4 flex gap-6 text-[16px] font-bold">
-          <span className="text-white border-b-2 border-transparent cursor-pointer">
-            Perdagangan Market
-          </span>
-          <span className="text-[#959595] cursor-pointer hover:text-white transition-colors">
-            Perdagangan Saya
-          </span>
-        </div>
+        <Tabs defaultValue="market" className="flex-1 flex flex-col min-h-0">
+          <TabsList className="bg-transparent gap-6 h-auto p-4 inline-flex w-max min-w-0 justify-start text-[16px] font-bold border-none border-t border-[#121B2E] rounded-none">
+            <TabsTrigger
+              value="market"
+              className="bg-transparent px-0 text-[16px] text-[#959595] hover:text-white data-[state=active]:text-white data-[state=active]:border-b-2 data-[state=active]:border-white cursor-pointer transition-colors h-auto rounded-none border-none shadow-none pb-1 transition-none"
+            >
+              Perdagangan Market
+            </TabsTrigger>
+            <TabsTrigger
+              value="my"
+              className="bg-transparent px-0 text-[#959595] text-[16px] hover:text-white data-[state=active]:text-white data-[state=active]:border-b-2 data-[state=active]:border-white cursor-pointer transition-colors h-auto rounded-none border-none shadow-none pb-1 transition-none"
+            >
+              Perdagangan Saya
+            </TabsTrigger>
+          </TabsList>
 
-        <div className="px-4 py-4 grid grid-cols-3 text-[14px] text-[#959595] border-t border-[#121B2E]">
-          <span>Harga IDR</span>
-          <span className="text-right">Jumlah BTC</span>
-          <span className="text-right">Waktu</span>
-        </div>
-
-        <div className="flex-1 overflow-y-auto px-4 pb-4 space-y-4 custom-scrollbar">
-          {recentTrades.map((trade, i) => (
-            <div key={i} className="grid grid-cols-3 text-[14px]">
-              <span
-                className={`font-medium ${trade.type === "buy" ? "text-[#12B76A]" : "text-[#E94B4B]"}`}
-              >
-                {trade.price}
-              </span>
-              <span className="text-right text-white/90 font-medium">
-                {trade.amount}
-              </span>
-              <span className="text-right text-[#959595]">{trade.time}</span>
+          <TabsContent
+            value="market"
+            className="flex-1 flex flex-col min-h-0 m-0"
+          >
+            <div className="px-4 py-4 grid grid-cols-3 text-[14px] text-[#959595] border-t border-[#121B2E]">
+              <span>Harga IDR</span>
+              <span className="text-right">Jumlah BTC</span>
+              <span className="text-right">Waktu</span>
             </div>
-          ))}
-        </div>
+
+            <div className="flex-1 overflow-y-auto px-4 pb-4 space-y-4 custom-scrollbar">
+              {recentTrades.map((trade, i) => (
+                <div key={i} className="grid grid-cols-3 text-[14px]">
+                  <span
+                    className={`font-medium ${trade.type === "buy" ? "text-[#12B76A]" : "text-[#E94B4B]"}`}
+                  >
+                    {trade.price}
+                  </span>
+                  <span className="text-right text-white/90 font-medium">
+                    {trade.amount}
+                  </span>
+                  <span className="text-right text-[#959595]">
+                    {trade.time}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="my" className="flex-1 flex flex-col min-h-0 m-0">
+            <div className="flex-1 flex items-center justify-center text-[#959595] text-sm py-12">
+              <p>Anda tidak memiliki riwayat perdagangan</p>
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );

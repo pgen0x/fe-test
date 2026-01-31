@@ -38,7 +38,7 @@ const DepositList: React.FC = () => {
       case "REJECTED":
         return "bg-red-500/10 text-red-500 border-red-500/20";
       case "PENDING":
-        return "bg-yellow-500/10 text-yellow-500 border-yellow-500/20";
+        return "bg-yellow-500/10 text-[#D57C17] border-yellow-500/20";
       default:
         return "bg-gray-500/10 text-gray-500 border-gray-500/20";
     }
@@ -153,7 +153,7 @@ const DepositList: React.FC = () => {
                 Previous
               </button>
               <div className="flex items-center gap-1">
-                <span className="bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-4 py-2 rounded-lg text-sm font-bold">
+                <span className="bg-yellow-500/10 text-[#D57C17] border border-yellow-500/20 px-4 py-2 rounded-lg text-sm font-bold">
                   Page {pagination.page} of {pagination.totalPages}
                 </span>
               </div>

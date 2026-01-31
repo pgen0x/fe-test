@@ -9,7 +9,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="space-y-4">
         <Link to="/trade">
-          <h1 className="text-4xl font-bold hover:text-yellow-500 transition-colors inline-block cursor-pointer">
+          <h1 className="text-4xl font-bold hover:text-[#D57C17] transition-colors inline-block cursor-pointer">
             Pasar
           </h1>
         </Link>

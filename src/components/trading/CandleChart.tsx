@@ -1,3 +1,4 @@
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useEffect, useRef } from "react";
 
 export default function CandleChart() {
@@ -49,40 +50,45 @@ export default function CandleChart() {
   return (
     <div className="flex-1 flex flex-col bg-[#00050D] overflow-hidden rounded-lg h-full">
       {/* Header */}
-      <div className="flex px-4 py-3 justify-between items-center bg-white/10 rounded-t-lg text-[13px] overflow-x-auto whitespace-nowrap scrollbar-hide">
+      <div className="flex px-4 py-3 justify-between gap-8 items-center bg-white/10 rounded-t-lg text-[13px] overflow-x-auto whitespace-nowrap scrollbar-hide">
         <div className="flex items-center gap-2">
-          <button className="text-white/60 hover:text-white transition-colors">
-            Waktu
-          </button>
-          <button className="text-yellow-500 font-medium">15M</button>
-          <button className="text-white/60 hover:text-white transition-colors">
-            15M
-          </button>
-          <button className="text-white/60 hover:text-white transition-colors">
-            1J
-          </button>
-          <button className="text-white/60 hover:text-white transition-colors">
-            4J
-          </button>
-          <button className="text-white/60 hover:text-white transition-colors">
-            1H
-          </button>
-          <button className="text-white/60 hover:text-white transition-colors">
-            1M
-          </button>
+          <Tabs defaultValue="15m" className="h-auto">
+            <TabsList className="bg-transparent gap-3 p-0 h-auto border-none">
+              {["Waktu", "15M", "1J", "4J", "1H", "1M"].map((tab) => (
+                <TabsTrigger
+                  key={tab}
+                  value={tab.toLowerCase()}
+                  className="bg-transparent px-0 text-white/50 hover:text-white data-[state=active]:bg-transparent data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-white rounded-none border-none shadow-none h-auto pb-1 transition-none font-bold"
+                >
+                  {tab}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="flex items-center gap-6">
-            <button className="text-white/60 hover:text-white transition-colors">
-              Asli
-            </button>
-            <button className="text-yellow-500 font-medium">
-              Trading View
-            </button>
-            <button className="text-white/60 hover:text-white transition-colors">
-              Kedalaman
-            </button>
-          </div>
+        <div className="flex items-center gap-2 shrink-0">
+          <Tabs defaultValue="tv" className="h-auto">
+            <TabsList className="bg-transparent gap-6 p-0 h-auto border-none">
+              <TabsTrigger
+                value="asli"
+                className="bg-transparent px-0 text-white/50 hover:text-white data-[state=active]:bg-transparent data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-white  rounded-none border-none shadow-none h-auto pb-1 transition-none font-bold"
+              >
+                Asli
+              </TabsTrigger>
+              <TabsTrigger
+                value="tv"
+                className="bg-transparent px-0 text-[#959595] hover:text-white data-[state=active]:bg-transparent data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-white rounded-none border-none shadow-none h-auto pb-1 transition-none font-bold"
+              >
+                Trading View
+              </TabsTrigger>
+              <TabsTrigger
+                value="depth"
+                className="bg-transparent px-0 text-[#959595] hover:text-white data-[state=active]:bg-transparent data-[state=active]:text-[#D57C17] data-[state=active]:border-b-2 data-[state=active]:border-white rounded-none border-none shadow-none h-auto pb-1 transition-none font-bold"
+              >
+                Kedalaman
+              </TabsTrigger>
+            </TabsList>
+          </Tabs>
         </div>
       </div>
 
@@ -97,7 +103,7 @@ export default function CandleChart() {
             Tinggi: <span className="text-[#12B76A]">12412</span>
           </span>
           <span className="text-white/60">
-            Renda: <span className="text-[#12B76A]">12072</span>
+            Rendah: <span className="text-[#12B76A]">12072</span>
           </span>
           <span className="text-white/60">
             Tutup: <span className="text-[#12B76A]">12323</span>

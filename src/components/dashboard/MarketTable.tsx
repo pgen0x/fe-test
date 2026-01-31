@@ -153,7 +153,7 @@ export default function MarketTable() {
       onClick={() => requestSort(sortKey)}
     >
       <div
-        className={`flex items-center gap-1 group-hover:text-white ${align === "right" ? "justify-end" : ""}`}
+        className={`flex items-center gap-1 text-nowrap group-hover:text-white ${align === "right" ? "justify-end" : ""}`}
       >
         {label}
         <SortIcon className="text-white/50 group-hover:text-white" />
@@ -241,7 +241,7 @@ export default function MarketTable() {
                 key={i}
                 className="border-white/5 hover:bg-white/5 transition-colors"
               >
-                <TableCell className="flex items-center gap-4 font-medium text-white">
+                <TableCell className="flex items-center gap-4 font-medium text-white text-nowrap">
                   <button
                     onClick={() => toggleFavorite(item.pair)}
                     className="focus:outline-none transition-transform active:scale-125"
@@ -257,7 +257,7 @@ export default function MarketTable() {
                   </button>
                   {item.pair}
                 </TableCell>
-                <TableCell className="text-right text-white/70 ">
+                <TableCell className="text-right text-white/70 text-nowrap">
                   {item.price}
                 </TableCell>
                 <TableCell
@@ -265,13 +265,13 @@ export default function MarketTable() {
                 >
                   {item.change}
                 </TableCell>
-                <TableCell className="text-right text-white/70">
+                <TableCell className="text-right text-white/70 text-nowrap">
                   {item.highLow}
                 </TableCell>
-                <TableCell className="text-right text-white/70">
+                <TableCell className="text-right text-white/70 text-nowrap">
                   {item.marketCap}
                 </TableCell>
-                <TableCell className="text-right text-white/70">
+                <TableCell className="text-right text-white/70 text-nowrap">
                   {item.volume}
                 </TableCell>
               </TableRow>

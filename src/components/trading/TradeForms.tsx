@@ -1,3 +1,4 @@
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
@@ -44,23 +45,32 @@ export default function TradeForms() {
   ).toLocaleString();
 
   return (
-    <div className="bg-[#0B1322]/30 p-6 pt-0 flex flex-col gap-6 mt-4">
+    <div className="bg-[#0B1322]/30 p-4 pt-0 flex flex-col gap-6 mt-4">
       {/* Header */}
-      <div className="space-y-4">
-        <h3 className="text-white font-bold text-sm pb-3 border-b border-white/5">
-          Spot
-        </h3>
-        <div className="flex gap-4 text-xs font-bold">
-          <span className="text-white border-b-2 border-transparent pb-1 cursor-pointer">
-            Limit
-          </span>
-          <span className="text-white/30 hover:text-white/60 cursor-pointer transition-colors pb-1">
-            Pasar
-          </span>
-          <span className="text-white/30 hover:text-white/60 cursor-pointer transition-colors pb-1">
-            Stop Limit
-          </span>
-        </div>
+      <div className="space-y-4 py-4 border-b border-[#121B2E]">
+        <h3 className="text-white font-bold text-[16px]">Spot</h3>
+        <Tabs defaultValue="limit" className="w-full">
+          <TabsList className="bg-transparent gap-4 p-0 h-auto w-full justify-start border-none">
+            <TabsTrigger
+              value="limit"
+              className="bg-transparent px-0 text-[12px] font-bold text-[#959595] data-[state=active]:text-white data-[state=active]:border-b-2 data-[state=active]:border-white rounded-none border-none shadow-none h-auto pb-1 transition-none"
+            >
+              Limit
+            </TabsTrigger>
+            <TabsTrigger
+              value="pasar"
+              className="bg-transparent px-0 text-[12px] font-bold text-[#959595] data-[state=active]:text-white data-[state=active]:border-b-2 data-[state=active]:border-white rounded-none border-none shadow-none h-auto pb-1 transition-none"
+            >
+              Pasar
+            </TabsTrigger>
+            <TabsTrigger
+              value="stop"
+              className="bg-transparent px-0 text-[12px] font-bold text-[#959595] data-[state=active]:text-white data-[state=active]:border-b-2 data-[state=active]:border-white rounded-none border-none shadow-none h-auto pb-1 transition-none"
+            >
+              Stop Limit
+            </TabsTrigger>
+          </TabsList>
+        </Tabs>
       </div>
 
       <div className="flex gap-8">

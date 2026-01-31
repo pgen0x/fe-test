@@ -20,7 +20,7 @@ export default function TradingPage() {
         <div className="flex flex-col xl:flex-row w-full h-auto xl:flex-1 xl:min-h-0 px-4 gap-4 mt-4 xl:mt-6 overflow-visible xl:overflow-hidden">
           {/* Middle: Chart and Trade Forms. Main content. Appearing FIRST on mobile */}
           <div className="w-full xl:flex-1 flex flex-col xl:min-h-0 order-1 xl:order-2 overflow-visible xl:overflow-y-auto custom-scrollbar xl:pr-1 gap-4">
-            <div className="flex-none xl:flex-1 h-[500px] md:h-[600px] xl:h-auto overflow-hidden z-0 rounded-lg">
+            <div className="flex-none h-[500px] md:h-[575px] overflow-hidden z-0 rounded-lg">
               <CandleChart />
             </div>
             <TradeForms />

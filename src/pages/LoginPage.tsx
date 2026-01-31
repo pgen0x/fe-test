@@ -82,13 +82,13 @@ const LoginPage: React.FC = () => {
             <label className="flex items-center text-gray-400 cursor-pointer">
               <input
                 type="checkbox"
-                className="mr-2 rounded border-white/10 bg-[#1A2332] text-yellow-500 focus:ring-0 focus:ring-offset-0"
+                className="mr-2 rounded border-white/10 bg-[#1A2332] text-[#D57C17] focus:ring-0 focus:ring-offset-0"
               />
               Remember me
             </label>
             <a
               href="#"
-              className="text-yellow-500 hover:text-yellow-400 font-medium"
+              className="text-[#D57C17] hover:text-yellow-400 font-medium"
             >
               Forgot password?
             </a>
@@ -106,7 +106,10 @@ const LoginPage: React.FC = () => {
 
         <p className="mt-8 text-center text-gray-500 text-sm">
           Don't have an account?{" "}
-          <a href="#" className="text-yellow-500 font-medium">
+          <a
+            href="#"
+            className="text-[#D57C17] font-medium hover:text-yellow-400"
+          >
             Contact support
           </a>
         </p>
