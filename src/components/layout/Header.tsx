@@ -67,7 +67,7 @@ export default function Header() {
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="text-white">
-                <Menu className="h-6 w-6" />
+                <Menu className="!h-5 !w-5" />
               </Button>
             </SheetTrigger>
             <SheetContent
