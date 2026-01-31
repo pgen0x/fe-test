@@ -49,7 +49,7 @@ export default function CandleChart() {
   return (
     <div className="flex-1 flex flex-col bg-[#00050D] overflow-hidden rounded-lg h-full">
       {/* Header */}
-      <div className="flex px-4 py-3 justify-between items-center bg-white/10 rounded-t-lg text-[13px]">
+      <div className="flex px-4 py-3 justify-between items-center bg-white/10 rounded-t-lg text-[13px] overflow-x-auto whitespace-nowrap scrollbar-hide">
         <div className="flex items-center gap-2">
           <button className="text-white/60 hover:text-white transition-colors">
             Waktu
@@ -87,9 +87,9 @@ export default function CandleChart() {
       </div>
 
       {/* Data Info Bar */}
-      <div className="px-4 py-1 flex items-center gap-4 text-[12px] bg-white/10 border-b border-white/5 mt-1">
-        <span className="text-white">2025/02/05</span>
-        <div className="flex items-center gap-3">
+      <div className="px-4 py-1 flex items-center gap-4 text-[12px] bg-white/10 border-b border-white/5 mt-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <span className="text-white flex-shrink-0">2025/02/05</span>
+        <div className="flex items-center gap-3 flex-shrink-0">
           <span className="text-white/60">
             Buka: <span className="text-[#12B76A]">12227</span>
           </span>
